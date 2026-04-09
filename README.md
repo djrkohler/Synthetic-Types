@@ -2,6 +2,7 @@
 
 **ABK Stuttgart · SS2026 · Prof. Daniel Koehler**
 **Studio "Synthetische Typen / Modelling Models"**
+**AM Kristof Gavrielides, KTL Volker Menke**
 
 ---
 
