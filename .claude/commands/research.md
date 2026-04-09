@@ -1,11 +1,20 @@
 ---
-description: Research any topic related to materials, construction, or robotics
-argument-hint: "topic in quotes, e.g. 'rammed earth supply chain in Germany'"
+description: Research any topic in depth
+argument-hint: "anything — a topic, a question, a YouTube URL, a material name"
 user-invocable: true
 ---
 
-Research the following topic thoroughly for the Synthetische Typen studio.
-Use the research-topic skill. Search at least 5-10 sources.
-Produce a structured markdown document with German Zusammenfassung.
+Research the following topic using the research skill. Auto-detect the
+right approach based on what the student is asking:
+
+- YouTube URL → video analysis with transcript extraction
+- Quantitative question → scientific research with data tables
+- Material/product journey → supply chain investigation
+- Academic question → literature search with citation networks
+- Everything else → broad multi-source research
+
+Approaches can be combined when a topic spans multiple modes.
+Let the student's curiosity guide the investigation. Produce a research
+document with German Zusammenfassung.
 
 Topic: $ARGUMENTS

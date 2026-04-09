@@ -36,17 +36,22 @@ try {
 Write-Host "→ Installing Playwright browser..."
 npx playwright install chromium 2>$null
 
+# Create output directories
+Write-Host "→ Creating output directories..."
+New-Item -ItemType Directory -Force -Path "research" | Out-Null
+New-Item -ItemType Directory -Force -Path "sources" | Out-Null
+New-Item -ItemType Directory -Force -Path "output/maps" | Out-Null
+
 Write-Host ""
 Write-Host "============================================"
 Write-Host "  Setup complete!"
 Write-Host ""
 Write-Host "  To start: claude"
 Write-Host ""
-Write-Host "  Available commands:"
-Write-Host "    /research `"topic`""
-Write-Host "    /youtube `"URL`""
-Write-Host "    /supply-chain `"material`""
-Write-Host "    /construction `"method`""
-Write-Host "    /robotics `"topic`""
-Write-Host "    /export"
+Write-Host "  Commands:"
+Write-Host "    /explore `"topic`"       — brainstorm and branch out"
+Write-Host "    /research `"topic`"      — deep research (auto-detects approach)"
+Write-Host "    /connections            — map patterns across your research"
+Write-Host "    /connections-report     — write synthesis from map selection"
+Write-Host "    /orchestrate `"topic`"   — 6 parallel research tracks"
 Write-Host "============================================"

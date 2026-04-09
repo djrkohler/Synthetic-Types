@@ -5,6 +5,9 @@ Thumbs.db
 # Claude Code local
 .claude/settings.local.json
 
+# Playwright MCP local cache
+.playwright-mcp/
+
 # Node
 node_modules/
 

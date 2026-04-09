@@ -4,6 +4,7 @@
       "Read",
       "Write(research/**)",
       "Write(sources/**)",
+      "Write(sources/images/**)",
       "Write(output/**)",
       "Bash(npx:*)",
       "Bash(node:*)",

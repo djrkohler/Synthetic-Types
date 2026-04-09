@@ -51,11 +51,9 @@ else
     echo "✓ yt-dlp installed"
 fi
 
-# Install K-Dense scientific skills plugin (optional)
-echo "→ Note: K-Dense scientific skills plugin"
-echo "  To install, run inside Claude Code:"
-echo "  /plugin marketplace add K-Dense-AI/claude-scientific-skills"
-echo "  /plugin install scientific-skills@claude-scientific-skills"
+# Create output directories
+echo "→ Creating output directories..."
+mkdir -p research sources output/maps
 
 echo ""
 echo "============================================"
@@ -63,11 +61,10 @@ echo "  Setup complete!"
 echo ""
 echo "  To start: claude"
 echo ""
-echo "  Available commands:"
-echo "    /research \"topic\""
-echo "    /youtube \"URL\""
-echo "    /supply-chain \"material\""
-echo "    /construction \"method\""
-echo "    /robotics \"topic\""
-echo "    /export"
+echo "  Commands:"
+echo "    /explore \"topic\"       — brainstorm and branch out"
+echo "    /research \"topic\"      — deep research (auto-detects approach)"
+echo "    /connections            — map patterns across your research"
+echo "    /connections-report     — write synthesis from map selection"
+echo "    /orchestrate \"topic\"   — 6 parallel research tracks"
 echo "============================================"

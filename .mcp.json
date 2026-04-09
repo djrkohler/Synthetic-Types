@@ -2,11 +2,30 @@
   "mcpServers": {
     "youtube-transcript": {
       "command": "npx",
-      "args": ["-y", "@kimtaeyoon83/mcp-server-youtube-transcript"]
+      "args": [
+        "-y",
+        "@kimtaeyoon83/mcp-server-youtube-transcript"
+      ]
     },
     "playwright": {
       "command": "npx",
-      "args": ["@playwright/mcp@latest"]
+      "args": [
+        "@playwright/mcp@latest"
+      ]
+    },
+    "arxiv": {
+      "type": "stdio",
+      "command": "arxiv-mcp-server",
+      "args": [],
+      "env": {}
+    },
+    "semantic-scholar": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": [
+        "semantic-scholar-fastmcp"
+      ],
+      "env": {}
     }
   }
 }
