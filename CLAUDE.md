@@ -99,7 +99,7 @@ for the main session to synthesize.
 2. Skill auto-detects the right research approach from the question
 3. Skill may spawn agents (e.g., `/orchestrate` spawns 6 `research-track` agents in parallel)
 4. Agents return raw findings → main session synthesizes into final document
-5. `/connections` reads all existing `research/` and `sources/` docs to find cross-document patterns
+5. `/connections` reads all docs under `research/` (recursively, including `research/sources/`) to find cross-document patterns
 
 ### MCP Servers (`.mcp.json`)
 
@@ -113,7 +113,7 @@ for the main session to synthesize.
 ### Visual Outputs
 
 `/connections` and `/orchestrate` generate self-contained interactive
-HTML visualizations saved to `output/maps/`. All use dark theme (#1a1a2e),
+HTML visualizations saved to `research/maps/`. All use dark theme (#1a1a2e),
 D3.js v7, and open directly in a browser.
 
 - **Force-directed connection maps**: synthesis sidebar, multi-select (Ctrl+click), "Copy for Report" export
@@ -126,26 +126,39 @@ Additional visualizations are proposed contextually based on available data.
 
 ## Output Directories
 
+All outputs live under a single `research/` tree. This keeps the project
+folder simple and makes it obvious where agent work lands.
+
 | Directory | Purpose |
 |-----------|---------|
-| `research/` | Research documents (markdown) |
-| `sources/` | Raw transcripts, notes, PDFs |
-| `output/maps/` | Interactive HTML visualizations |
-| `references/` | Studio brief, glossary |
+| `research/` | Final synthesized research documents (markdown) |
+| `research/sources/` | Raw subagent outputs, transcripts, notes, PDFs, per-track `.md`/`.json` |
+| `research/videos/` | Downloaded YouTube videos |
+| `research/maps/` | Interactive HTML visualizations |
+| `references/` | Studio brief, glossary (read-only) |
+
+Subagents MUST document their raw findings in `research/sources/` (as
+`.md` or `.json`) so the student can retrieve details later. The main
+session synthesizes those raw outputs into final documents at the
+`research/` root.
 
 ## File Naming
 
 Pattern: `[directory]/[prefix]-[topic-slug]-[YYYY-MM-DD].[ext]`
 
-**research/** — `[topic].md`, `explore-[topic].md`, `supply-chain-[material].md`,
-`scientific-[topic].md`, `video-[topic].md`, `literature-[topic].md`,
-`connections-[date].md`, `connections-report-[date].md`,
+**research/** (final documents) — `[topic].md`, `explore-[topic].md`,
+`supply-chain-[material].md`, `scientific-[topic].md`, `video-[topic].md`,
+`literature-[topic].md`, `connections-[date].md`, `connections-report-[date].md`,
 `orchestrate-[topic]-[track-name].md`, `orchestrate-[topic]-synthesis.md`
 
-**output/maps/** — `connections-map-[date].html`, `timeline-[date].html`,
+**research/sources/** (raw material) — `transcript-[topic].md`,
+`pdf-[topic].md`, `notes-[topic].md`, `data-[topic].md`,
+`subagent-[track-name]-[topic].md`, `subagent-[track-name]-[topic].json`
+
+**research/maps/** — `connections-map-[date].html`, `timeline-[date].html`,
 `sankey-[topic].html`, `scatter-[topic].html`, `orchestrate-[topic]-map.html`
 
-**sources/** — `transcript-[topic].md`, `pdf-[topic].md`, `notes-[topic].md`, `data-[topic].md`
+**research/videos/** — `[title-slug]-[YYYY-MM-DD].mp4` (or `.webm`, `.mp3`)
 
 All filenames include `[YYYY-MM-DD]` date suffix.
 
@@ -202,7 +215,7 @@ Search broadly across media types — do not default to web articles only:
 
 ## Permissions
 
-Pre-approved writes: `research/`, `sources/`, `output/` (including subdirectories).
+Pre-approved writes: `research/` (including all subdirectories: `sources/`, `videos/`, `maps/`).
 Pre-approved bash: `npx`, `node`, `ls`, `mkdir`, `cp`, `mv`, `tree`, `wc`,
 `head`, `tail`, `grep`, `find`, `date`, `yt-dlp`.
 Denied: `rm -rf`, `sudo`.

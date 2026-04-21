@@ -140,15 +140,15 @@ which methods you tried and what happened with each.
 
 1. **MCP YouTube Transcript**: `get_transcript` — try English, German,
    then auto-generated
-2. **yt-dlp manual subs**: `yt-dlp --write-subs --sub-lang en --skip-download -o "sources/transcript-%(id)s" "URL"`
-3. **yt-dlp auto subs**: `yt-dlp --write-auto-sub --sub-lang en --skip-download -o "sources/transcript-%(id)s" "URL"`
+2. **yt-dlp manual subs**: `yt-dlp --write-subs --sub-lang en --skip-download -o "research/sources/transcript-%(id)s" "URL"`
+3. **yt-dlp auto subs**: `yt-dlp --write-auto-sub --sub-lang en --skip-download -o "research/sources/transcript-%(id)s" "URL"`
 4. **WebFetch transcript services**:
    - `https://youtubetranscript.com/?v=VIDEO_ID`
    - `https://kome.ai/tools/youtube-transcript-generator`
 5. **Playwright DOM extraction**: navigate to video, click "Show
    transcript", extract from DOM
 
-Save transcript to `sources/transcript-[topic]-[YYYY-MM-DD].md` with
+Save transcript to `research/sources/transcript-[topic]-[YYYY-MM-DD].md` with
 a note of which method succeeded.
 
 **If ALL five steps fail**: state this clearly in the document, list

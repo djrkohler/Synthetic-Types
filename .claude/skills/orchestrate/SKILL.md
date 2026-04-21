@@ -159,7 +159,7 @@ click to highlight, zoom/pan, legend, dark background (#1a1a2e).
 Follow the same HTML template structure and D3.js patterns documented
 in the connections skill (`connections/SKILL.md` section 4).
 
-Save to `output/maps/orchestrate-[topic-slug]-map-[YYYY-MM-DD].html`
+Save to `research/maps/orchestrate-[topic-slug]-map-[YYYY-MM-DD].html`
 
 ## 7. Write the Synthesis Document
 

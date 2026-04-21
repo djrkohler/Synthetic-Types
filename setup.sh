@@ -53,7 +53,7 @@ fi
 
 # Create output directories
 echo "→ Creating output directories..."
-mkdir -p research sources output/maps
+mkdir -p research/sources research/videos research/maps
 
 echo ""
 echo "============================================"

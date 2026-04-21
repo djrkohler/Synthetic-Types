@@ -38,9 +38,9 @@ npx playwright install chromium 2>$null
 
 # Create output directories
 Write-Host "→ Creating output directories..."
-New-Item -ItemType Directory -Force -Path "research" | Out-Null
-New-Item -ItemType Directory -Force -Path "sources" | Out-Null
-New-Item -ItemType Directory -Force -Path "output/maps" | Out-Null
+New-Item -ItemType Directory -Force -Path "research/sources" | Out-Null
+New-Item -ItemType Directory -Force -Path "research/videos" | Out-Null
+New-Item -ItemType Directory -Force -Path "research/maps" | Out-Null
 
 Write-Host ""
 Write-Host "============================================"

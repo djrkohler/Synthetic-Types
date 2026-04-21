@@ -16,7 +16,19 @@ __pycache__/
 *.pyc
 .venv/
 
-# Research outputs (track these, don't ignore)
-# research/
-# sources/
-# output/
+# Personal material research (not shipped to students)
+data/
+
+# Research outputs — students start with an empty research/ tree.
+# The folder structure (research/sources, research/videos, research/maps)
+# is tracked via .gitkeep files; generated content is not.
+research/*
+!research/sources/
+!research/videos/
+!research/maps/
+research/sources/*
+!research/sources/.gitkeep
+research/videos/*
+!research/videos/.gitkeep
+research/maps/*
+!research/maps/.gitkeep

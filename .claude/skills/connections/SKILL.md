@@ -2,7 +2,7 @@
 name: connections
 description: >
   Cross-reference all research documents and generate a visual map of
-  connections. Reads everything in research/ and sources/, extracts
+  connections. Reads everything in research/ (including research/sources/), extracts
   concepts and themes, finds patterns across documents, and produces
   two outputs: (1) an interactive HTML visualization showing concepts
   as nodes and connections as edges, and (2) a narrative markdown
@@ -16,7 +16,7 @@ description: >
 
 ## 1. Inventory
 
-Read all markdown files in `research/` and `sources/` (skip images,
+Read all markdown files in `research/` recursively (including `research/sources/`; skip images,
 binary files, and templates). For each document, note:
 - Filename and date
 - Document type (exploration, supply chain, scientific, video analysis,
@@ -700,7 +700,7 @@ The file must work when opened directly in a browser (no server needed).
 - Keep node count manageable: **max 60 nodes**. If there are more
   concepts, show only the most significant ones.
 
-Save to `output/maps/connections-map-[YYYY-MM-DD].html`
+Save to `research/maps/connections-map-[YYYY-MM-DD].html`
 
 ## 5. Write the Narrative Document
 
@@ -738,7 +738,7 @@ generate all of them — only those where sufficient data exists.
 
 All additional visualizations use the same dark theme (#1a1a2e), font
 stack, and self-contained HTML pattern as the connection map. Include
-D3.js v7 via CDN. Save each to `output/maps/`.
+D3.js v7 via CDN. Save each to `research/maps/`.
 
 ### Timeline View
 
@@ -746,7 +746,7 @@ D3.js v7 via CDN. Save each to `output/maps/`.
 the research includes historical precedents, chronological developments,
 or dated publications.
 
-**Output:** `output/maps/timeline-[YYYY-MM-DD].html`
+**Output:** `research/maps/timeline-[YYYY-MM-DD].html`
 
 Structure: Horizontal timeline using D3.js. X-axis is time (dates of
 documents, historical events, publication dates extracted from research).
@@ -768,7 +768,7 @@ Include a complete, working HTML file with:
 OR documents describing material flows, transformation stages, or actor
 networks. Do NOT ask — just generate it alongside the connection map.
 
-**Output:** `output/maps/sankey-supply-chains-[YYYY-MM-DD].html`
+**Output:** `research/maps/sankey-supply-chains-[YYYY-MM-DD].html`
 
 Structure: A tabbed, scrollable page with one Sankey diagram per
 material supply chain. Use an inline D3 sankey layout (no external
@@ -813,7 +813,7 @@ each Sankey diagram.
 property data for **3+ materials or formulations** (strength,
 conductivity, density, cost, embodied carbon, etc.).
 
-**Output:** `output/maps/scatter-[topic-slug]-[YYYY-MM-DD].html`
+**Output:** `research/maps/scatter-[topic-slug]-[YYYY-MM-DD].html`
 
 Structure: D3.js scatter plot. Each point is a material or formulation.
 Two dropdown menus let the user select which property maps to X-axis
